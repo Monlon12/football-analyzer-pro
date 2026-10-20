@@ -304,10 +304,7 @@ def predict_match(home_expected, away_expected):
 with st.sidebar:
     st.header("⚙️ Paramèt")
 
-    api_key = st.text_input(
-        "Football-Data.org API Token",
-        type="password",
-    )
+    api_key = st.secrets.get("FOOTBALL_API_KEY", "")
 
     league_name = st.selectbox(
         "Konpetisyon",
@@ -736,11 +733,7 @@ def team_statistics(team_name, matches):
 with st.sidebar:
     st.header("⚙️ Paramèt")
 
-    api_key = st.text_input(
-        "Football-Data.org API Token",
-        type="password",
-        help="Pa pataje kle API ou piblikman.",
-    )
+    api_key = st.secrets.get("FOOTBALL_API_KEY", "")
 
     league_name = st.selectbox(
         "Chwazi konpetisyon an",
